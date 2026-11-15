@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Викторина: Основы Python</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Экран приветствия -->
+        <div id="start-screen" class="screen active">
+            <h1>Викторина: Основы Python</h1>
+            <p>Проверь свои знания. На каждый вопрос — 60 секунд.</p>
+            <input type="text" id="username" placeholder="Введи своё имя">
+            <button id="start-btn">Начать викторину</button>
+        </div>
+
+        <!-- Экран с вопросами -->
+        <div id="quiz-screen" class="screen">
+            <div class="header">
+                <span id="question-progress">Вопрос 1 из 20</span>
+                <div class="score-badge">Баллы: <span id="current-score">0</span></div>
+                <button id="finish-btn">Завершить досрочно</button>
+            </div>
+            <h2 id="question-text">Текст вопроса</h2>
+
+            <div id="timer-display" class="timer-box"></div>
+
+            <div id="options-container" class="options"></div>
+
+            <div id="feedback-text" class="feedback"></div>
+
+            <button id="help-btn" class="help-btn">Нужна помощь?</button>
+        </div>
+
+        <!-- Экран результатов -->
+        <div id="result-screen" class="screen">
+            <h2>Викторина завершена!</h2>
+            <p id="result-message">Твой результат:</p>
+            <p id="final-score" class="big-score">0 из 20</p>
+
+            <div class="top-block">
+                <h3>Топ-3 результата</h3>
+                <ol id="top-players"></ol>
+            </div>
+
+            <button onclick="location.reload()">Пройти заново</button>
+        </div>
+    </div>
+
+    <!-- Окно помощи с подсказкой -->
+    <div id="help-modal" class="modal">
+        <div class="modal-content">
+            <h3>Подсказка</h3>
+            <p id="hint-content" class="hint-text"></p>
+            <p class="hint-note">Таймер на паузе — закрой подсказку, чтобы продолжить.</p>
+            <button id="close-help-btn">Продолжить</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
